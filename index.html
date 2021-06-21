@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Chinatowns of NYC</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal@4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/Mott-Street-Chinatown-outdoor-dining.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>New York's Chinatowns During COVID-19</h1>
+            <span class="subheading">A comparative study on the effects of the pandemic on New York's 3 Chinatowns</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <br><br>
+
+  <section id="showcase">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="showcase-head">
+            <img src="img/Headlines-2.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<br><br>
+  <!-- Main Content -->
+<section id="intro">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Chinatowns are suffering during the pandemic.</h2>
+          <p class="lead">The restaurant industry is essential to New York City’s social and economic fabric. From small, family-owned restaurants and food carts to four-star world-famous establishments, the city abounds with restaurants that offer cuisines from every corner of the globe. And in 2018 more than 60% of NYC restaurant workers were immigrants, 44% were Hispanic and 20% were Asian. Which means the impact of the pandemic and closure order on restaurants is a blow to the most vulnerable sectors of society. According to Yelp, Chinatowns in major American cities are <a href = "https://www.bloomberg.com/news/articles/2020-12-07/covid-19-has-been-a-disaster-for-u-s-chinatowns">performing worse</a> compared to their surrounding metros in January to November 2020. Additionally Womply stated that 59% of independent Chinese restaurants across America have <a href="https://sanfrancisco.cbslocal.com/2020/04/21/chinese-restaurants-in-trouble-coronavirus-covid-19-outbreak/">ceased operations</a>. These mean that the impact of the pandemic and closure order is a blow to the vulnerable community members.</p>
+        </div>
+
+
+</section>
+
+
+
+<section id="intro2">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Why do we care?</h2>
+          <p class="lead">We're interested in exploring how Chinese restaurants are performing amidst the surge of racist sentiments against Asian and Asian American communities in New York City. Our research questions include:</p>
+          <ul>
+            <li>How are all restaurants performing in the three Chinatowns?</li>
+            <li>How are Chinese restaurants recovering compared to other cuisine groups in New York City?</li>
+            <li>Which Chinatown has the lowest recovery performance for Chinese restaurants?</li>
+            <li>How are Chinese restaurants recovering compared to other cuisines in New York City’s main Chinatowns: Manhattan Chinatown, Sunset Park, and Flushing?</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="city">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <h2>Methods</h2>
+
+          <p class="lead"> We are using Safegraph Points of Interest weekly foot traffic data from January to June 2020 to map restaurant locations in Manhattan Chinatown, Sunset Park, and Flushing. Additionally, we map selected anti-Asian incidents from the news. We use two analytical methods to understand restaurants’ performance and resiliency:</p>
+          <ol>
+            <li>Performance: number of open restaurants</li>
+              <ul>We compare the number of open restaurants in January, March, and June to understand their performance in New York City’s Chinatowns before, during, and after the March 17th restaurant closure order by cuisine group: ‘Chinese’, ‘Other Asian’, and ‘Other’. From the Safegraph data, we define ‘closed’ restaurants as restaurants that had 0 visitors for the first 3 weeks of January and March. Due to data limitations, we used the first two weeks of June and last week of May to identify ‘closed’ restaurants in June. In the bubble diagram, we show the counts in March and June as a percentage of January’s count.</ul>
+              <br>
+            <li>Resiliency: weekly foot traffic</li>
+              <ul>We aggregated the weekly foot traffic data in restaurant businesses in New York City’s Chinatowns between the week of March 16th to June 8th 2020 by cuisine group. We show weekly foot traffic data as a percentage of foot traffic in the week of March 16th, using time-series line charts.</ul>
+          </ol>
+      </div>
+    </div>
+  </div>
+
+  <section id="equation"
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="equation">
+          <img src="img/equation.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+
+          <h2>How are Chinese restaurants performing during the pandemic?</h2>
+
+          <p><b>In the 3 Chinatowns, the number of open restaurants in all cuisine groups dropped in March and started rebounding in June</b>.</p>
+          <p>The <a href = "https://www.nrn.com/news/new-york-city-restaurants-must-close-due-coronavirus"> restaurant closure order</a> started on March 17th and the <a href = "https://www.nytimes.com/2020/05/29/nyregion/coronavirus-new-york-live-updates.html">Phase 1 reopening</a> on June 8th might explain this trend.</p>
+          <p><b>Click the buttons below to see the change!</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <div class="howGraph">
+        <iframe src="https://thitowisambodhi.github.io/d3/bar.html" width="100%" height="450px" style="border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div id="However">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <h2>However, Chinese restaurants suffered the largest drop of visitors compared to other cuisines.</h2>
+
+          <p><b>While restaurants in all cuisine groups show signals of recovery in June, Chinese restaurants suffered the largest drop in visitors in the first four weeks of restaurant closure order</b>. Chinese restaurants continued to have a stable growth, similar to other cuisine groups. In June, all cuisine groups have relatively reached pre-restaurant closure visitor level, however, <b>Chinese restaurants still had the lowest recovery rate compared to other cuisine groups.</b></p>
+          <p><b>Hover over the chart below to see more information!</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class"howeverGraph">
+        <iframe src="https://thitowisambodhi.github.io/d3/nyc.html" width="120%" height="550px" style="border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="showcase-head">
+          <img src="img/Screenshot 2020-12-06 145355 (edit).png" width="100%" height="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="rise">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>The rise of Anti-Asian incidents during the pandemic.</h2>
+            <p>Disease and outbreaks have long been used to rationalize xenophobia. In the map, we locate <b>only a few of the reported anti-Asian incidents reported in New York City</b> in early 2020. The pandemic is covid, but the pandemic is also racism.</p>
+            <p><b>Scroll on the map for incidents!</b></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br>
+
+  <section class="maps">
+    <div id="Incidents">
+        <div class"Incidentsmapping">
+        <iframe src="https://lj146.github.io/Big_Data/index" width="100%" height="900px" style="border: none;"></iframe>
+        </div>
+    </div>
+  </section>
+
+
+<div id="in">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Across the 3 Chinatowns, Chinese restaurants in Manhattan Chinatown are the least recovered.</h2>
+            <p><b>Chinese restaurants in Manhattan’s Chinatown are the least recovered compared to Sunset Park in Brooklyn and Flushing in Queens.</b> Only in Manhattan where the number of open Chinese restaurants in June is fewer than in March.</p>
+            <p><b>Click the buttons below to see the animation!</b></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="circlechart">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="chinatowncircle">
+          <iframe src="https://thitowisambodhi.github.io/d3/circles.html" width="980" height="450" style="border: none;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+<section id="boro">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Chinatown, Manhattan</h2>
+            <h4>Chinese restaurants in Manhattan are the least recovered compared to other cuisine groups.</h4>
+            <p class="lead"><b>Chinese restaurants suffered the biggest blow and recovered the least compared to other cuisine groups.</b> Other Asian and non-Asian restaurants have reached pre-restaurant closure visitor count. Interestingly, non-Asian restaurants experienced irregular gain and loss patterns, where it peaked in the week of May 25th.</p>
+            <p><b>Hover over the chart below to see more information!</b></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="manhattanGraph">
+          <iframe src="https://thitowisambodhi.github.io/d3/manhattan.html" width="110%" height="550px" style="border: none;" style="position: relative;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="maps">
+      <div id="manhattan">
+          <div class"manhattanmapping">
+          <iframe src="https://lj146.github.io/Big_Data/Manhattan_Map.html" width="60%" height="650px" style="border: none;"></iframe>
+          </div>
+      </div>
+    </section>
+
+<br><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2>Sunset Park, Brooklyn</h2>
+        <h4>Chinese restaurants in Sunset Park are also the least recovered compared to other cuisine groups.</h4>
+          <p><b>Though the difference is slim, Chinese restaurants in Brooklyn Chinatown recovered the least compared to other cuisine groups</b>. Despite the stable recovery rate for all three cuisine groups after the first week of April, only non-Asian restaurants that have reached beyond pre-restaurant closure visitor count.</p>
+          <p><b>Hover over the chart below to see more information!</b></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="brookylnGraph">
+          <iframe src="https://thitowisambodhi.github.io/d3/brooklyn.html" width="110%" height="550px" style="border: none;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="maps">
+      <div id="brooklyn">
+          <div class"brooklynmapping">
+          <iframe src="https://lj146.github.io/Big_Data/Brooklyn_Map.html" width="60%" height="650px" style="border: none;"></iframe>
+          </div>
+      </div>
+    </section>
+
+<br><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2>Flushing, Queens</h2>
+        <h4>However, Chinese restaurants are thriving in Flushing!</h4>
+          <p><b>Chinese restaurants are recovering well in Flushing, despite the large drop they experienced in the beginning of restaurant closure order</b>. In fact, only Chinese and Asian restaurants that are reaching pre-restaurant closure order visit count. While non-Asian restaurants suffered the least blow during the restaurant closure order, their recovery rate is not as high as Chinese and Asian restaurants.</p>
+          <p><b>Hover over the chart below to see more information!</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="flushingGraph">
+        <iframe src="https://thitowisambodhi.github.io/d3/flushing.html" width="110%" height="550px" style="border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="maps">
+    <div id="flushing">
+        <div class"flushingmapping">
+        <iframe src="https://lj146.github.io/Big_Data/Flushing_Map.html" width="60%" height="650px" style="border: none;"></iframe>
+        </div>
+    </div>
+  </section>
+
+</section>
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+
+<section id="conclusion">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="conclude">
+            <img src="img/1920x0.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2>Conclusion: comparative Chinatown study uncovers the nuance in restaurant recovery</h2>
+          <p>While at the city level Chinese restaurants in New York City’s main Chinatowns seem to recover as well as other cuisine groups, a comparative study revealed important differences between neighborhoods with some lagging behind.  The difference could be attributed to multiple factors, such as demographic make-up, physical infrastructure, food delivery service presence, the suitability of restaurants’ offerings for take-out, and perhaps sentiment against Asian communities. This opens up future research opportunities to draw a causal relationship from these factors to restaurants’ performance.  A vaccine might put an end to the pandemic, however, business associations, community leaders, urban planners, and policymakers need to work together to save small businesses.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<br><br>
+<br><br>
+<br><br>
+
+
+</div>
+
+
+
+
+
+
+
+        <!-- Pager -->
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+
+            <section class="sss">
+              <div>
+                <h3>Acknowledgements</h3>
+                <p>This website and its contents are developed by Jianyu Li, Zhen Chen, and Thito Wisambodhi for 11.454 Big Data Visualization and Society class final project. We are indebted to the teaching team, Sarah Williams, Yuan Lai, Trish Cafferky, Yanchao Li, and Lily Xie for this final project development process. The data we used for the visualizations are from SafeGraph Weekly Foot Traffic Data and the visualizations on this website have been adapted from the work of Yan Holtz. The photographs are from YR Media, Gem Bing shop, Jeju Noodle Bar, NYPD Crime Stopper, ABC7, Yahoo! News, Sungmin Kwon, and Forbes. Please contact us if you find materials where credit is missing or that you would rather have removed.</p>
+                <h3>Sources</h3>
+                <p>
+                <a href="https://www.safegraph.com/weekly-foot-traffic-patterns">SafeGraph Weekly Foot Traffic Data</a>,
+                <a href="https://www.d3-graph-gallery.com/">Yan Holtz</a>,
+                <a href="https://yr.media/news/trumps-racist-term-china-flu-may-have-hate-crimes-rising/">YR Media</a>,
+                <a href="https://www.instagram.com/p/B90SpSbh5xp/">Gem Bing shop</a>,
+                <a href="https://www.instagram.com/p/B-2dmfqjNQn/"> Jeju Noodle Bar</a>,
+                <a href="https://twitter.com/nypdtips/status/1301741247971954688">NYPD Crime Stopper</a>,
+                <a href="https://abc7ny.com/13-year-old-boys-arrested-in-case-of-89-year-old-woman-set-on-fire/6414330/">ABC7</a> ,
+                <a href="https://news.yahoo.com/asian-woman-harassed-coronavirus-rego-145714571.html"> Yahoo! News</a>,
+                <a href="https://www.nydailynews.com/new-york/queens/ny-video-queens-bayside-20200618-snr6tqvoaffplgfwtzn4dbpzei-story.html">Sungmin Kwon</a>, and
+                <a href="https://www.forbes.com/sites/chloesorvino/2020/04/18/in-pictures-new-york-city-restaurants-fight-to-survive/?sh=113b38f52b4f">Forbes</a>.</p>
+              </div>
+            </section>
+
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; New York's Chinatowns During Covid-19</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://unpkg.com/intersection-observer"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+  <!-- Scrolly scripts -->
+  <script>
+		ScrollReveal().reveal('.showcase-head',{
+      duration: 2000,
+      origin: 'top',
+      distance: '300px',
+      viewFactor: 0.2,
+      reset: true
+    });
+	</script>
+
+  <script>
+		ScrollReveal().reveal('.conclude',{
+      duration: 2000,
+      origin: 'top',
+      distance: '300px',
+      viewFactor: 0.2,
+      reset: true
+    });
+	</script>
+
+  <script>
+    ScrollReveal().reveal('.equation',{
+      duration: 2000,
+      origin: 'top',
+      distance: '300px',
+      viewFactor: 0.2,
+      reset: true
+    });
+  </script>
+
+
+
+</body>
+
+</html>
